@@ -10,8 +10,8 @@ class PokemonGridWidget extends StatelessWidget {
       scrollDirection: Axis.vertical,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         childAspectRatio: 0.8,
-        crossAxisCount: 2,
-        crossAxisSpacing: 16,
+        crossAxisCount: 3,
+        crossAxisSpacing: 12,
         mainAxisSpacing: 16,
       ),
       itemBuilder: (_, index) {
@@ -20,7 +20,7 @@ class PokemonGridWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Flexible(
-                flex: 5,
+                flex: 10,
                 child: Stack(
                   children: <Widget>[
                     Center(
@@ -31,7 +31,7 @@ class PokemonGridWidget extends StatelessWidget {
                           child: InkWell(
                             onTap: () {},
                             child: Image.network(
-                              "http://www.serebii.net/pokemongo/pokemon/020.png",
+                              "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/100.png",
                               height: 120,
                               fit: BoxFit.cover,
                             ),
@@ -41,18 +41,18 @@ class PokemonGridWidget extends StatelessWidget {
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(
-                        horizontal: 24,
-                        vertical: 16,
+                        horizontal: 16,
+                        vertical: 8,
                       ),
                       child: Align(
                         alignment: Alignment.bottomLeft,
                         child: CircleAvatar(
-                          maxRadius: 15,
+                          maxRadius: 12,
                           backgroundColor: Colors.white,
                           child: Icon(
                             Icons.favorite,
                             color: Color(0xFF304661),
-                            size: 15,
+                            size: 14,
                           ),
                         ),
                       ),
@@ -61,9 +61,13 @@ class PokemonGridWidget extends StatelessWidget {
                 ),
               ),
               Flexible(
+                flex: 1,
+                child: SizedBox(height: 2),
+              ),
+              Flexible(
                 flex: 2,
                 child: Text(
-                  "Pokemon",
+                  "Pokemon ",
                   maxLines: 1,
                   textAlign: TextAlign.center,
                   overflow: TextOverflow.ellipsis,
@@ -73,7 +77,6 @@ class PokemonGridWidget extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 16.0),
             ],
           ),
         );
