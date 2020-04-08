@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 _buildTitle(),
-                _buildCards(),
+                _buildFilterWidgets(),
                 SizedBox(height: 32),
                 PokemonGridWidget(),
                 SizedBox(height: 16),
@@ -30,7 +30,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _buildCards() {
+  Widget _buildFilterWidgets() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
