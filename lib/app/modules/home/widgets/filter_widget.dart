@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 
 class FilterWidget extends StatelessWidget {
+  final Function action;
+
+  const FilterWidget({
+    @required this.action,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,45 +23,48 @@ class FilterWidget extends StatelessWidget {
           ),
         ],
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          Flexible(
-            flex: 6,
-            child: Text(
-              "Filter",
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 16.0,
-              ),
-            ),
-          ),
-          Flexible(
-            flex: 2,
-            child: SizedBox(width: 2.0),
-          ),
-          Flexible(
-            flex: 2,
-            child: CircleAvatar(
-              maxRadius: 10,
+      child: InkWell(
+        onTap: action,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Flexible(
+              flex: 6,
               child: Text(
-                "0",
+                "Filter",
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
-                  fontSize: 12.0,
-                  color: Color(
-                    0xFF7c7f83,
-                  ),
+                  color: Colors.white,
+                  fontSize: 16.0,
                 ),
               ),
-              backgroundColor: Colors.white,
             ),
-          ),
-        ],
+            Flexible(
+              flex: 2,
+              child: SizedBox(width: 2.0),
+            ),
+            Flexible(
+              flex: 2,
+              child: CircleAvatar(
+                maxRadius: 10,
+                child: Text(
+                  "0",
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontSize: 12.0,
+                    color: Color(
+                      0xFF7c7f83,
+                    ),
+                  ),
+                ),
+                backgroundColor: Colors.white,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
