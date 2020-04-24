@@ -10,6 +10,7 @@ class AppWidget extends StatelessWidget {
       initialRoute: Modular.initialRoute,
       navigatorKey: Modular.navigatorKey,
       theme: ThemeData(
+        buttonTheme: ButtonThemeData(minWidth: 10),
         textTheme: GoogleFonts.poppinsTextTheme(
           Theme.of(context).textTheme,
         ),

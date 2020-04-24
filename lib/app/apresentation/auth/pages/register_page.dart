@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../components/form_sign_in_and_register_component.dart';
 import '../components/top_information_component.dart';
 import '../widgets/perform_button_action_widget.dart';
 
@@ -17,10 +16,6 @@ class RegisterPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               TopInformationComponent(titlePage: "Sign Up"),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 32),
-                child: FormSignInAndRegisterComponent(),
-              ),
               _buildContent(),
             ],
           ),
