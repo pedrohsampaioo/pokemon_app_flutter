@@ -12,9 +12,5 @@ abstract class SignInFormEvent with _$SignInFormEvent {
     @required EmailAddress emailAddress,
     @required Password password,
   }) = SignInWithEmailAndPassword;
-  const factory SignInFormEvent.registerInWithEmailAndPassword({
-    @required EmailAddress emailAddress,
-    @required Password password,
-  }) = RegisterWithEmailAndPassword;
   const factory SignInFormEvent.signInWithGoogle() = SignInWithGoogle;
 }

@@ -6,8 +6,8 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      onGenerateRoute: Modular.generateRoute,
       initialRoute: Modular.initialRoute,
+      onGenerateRoute: Modular.generateRoute,
       navigatorKey: Modular.navigatorKey,
       theme: ThemeData(
         buttonTheme: ButtonThemeData(minWidth: 10),

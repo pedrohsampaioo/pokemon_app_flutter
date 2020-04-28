@@ -9,26 +9,32 @@ import '../../../domain/auth/auth_facade_interface.dart';
 import '../../../domain/auth/auth_failures.dart';
 import '../../../domain/auth/value_objects.dart';
 
-part 'sign_in_form_bloc.freezed.dart';
-part 'sign_in_form_event.dart';
-part 'sign_in_form_state.dart';
+part 'register_form_bloc.freezed.dart';
+part 'register_form_event.dart';
+part 'register_form_state.dart';
 
-class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
+class RegisterFormBloc extends Bloc<RegisterFormEvent, RegisterFormState> {
   final AuthFacadeInterface _authFacade;
 
-  SignInFormBloc(this._authFacade);
+  RegisterFormBloc(this._authFacade);
 
   @override
-  SignInFormState get initialState => SignInFormState.initial();
+  RegisterFormState get initialState => RegisterFormState.initial();
 
   @override
-  Stream<SignInFormState> mapEventToState(
-    SignInFormEvent event,
+  Stream<RegisterFormState> mapEventToState(
+    RegisterFormEvent event,
   ) async* {
     yield* event.map(
+      usernameChanged: (e) async* {
+        yield state.copyWith(
+          username: Username(e.usernameStr),
+          authFailureOrSucessOption: none(),
+        );
+      },
       emailChanged: (e) async* {
         yield state.copyWith(
-          emailAddress: EmailAddress(e.emailAddressStr),
+          emailAddress: EmailAddress(e.emailStr),
           authFailureOrSucessOption: none(),
         );
       },
@@ -38,35 +44,26 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
           authFailureOrSucessOption: none(),
         );
       },
-      signInWithEmailAndPassword: (e) async* {
+      registerWithEmailAndPassword: (e) async* {
         final isEmailValid = state.emailAddress.isValid();
         final isPasswordValid = state.password.isValid();
+        final isUsernameValid = state.username.isValid();
         Either<AuthFailure, Unit> authFailureOrSucess;
-        if (isEmailValid && isPasswordValid) {
+        if (isEmailValid && isPasswordValid && isUsernameValid) {
           yield state.copyWith(
             isSubmitting: true,
             authFailureOrSucessOption: none(),
           );
-          authFailureOrSucess = await _authFacade.signInWithEmailAndPassword(
+          authFailureOrSucess = await _authFacade.registerWithEmailAndPassword(
             emailAddress: state.emailAddress,
             password: state.password,
+            username: state.username,
           );
         }
         yield state.copyWith(
           isSubmitting: false,
           showErrorMessages: true,
           authFailureOrSucessOption: optionOf(authFailureOrSucess),
-        );
-      },
-      signInWithGoogle: (e) async* {
-        yield state.copyWith(
-          isSubmitting: true,
-          authFailureOrSucessOption: none(),
-        );
-        final authFailureOrSucess = await _authFacade.signInWithGoogle();
-        yield state.copyWith(
-          isSubmitting: false,
-          authFailureOrSucessOption: some(authFailureOrSucess),
         );
       },
     );

@@ -6,6 +6,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 
 import '../../domain/auth/auth_facade_interface.dart';
 import '../../domain/auth/auth_failures.dart';
+import '../../domain/auth/user.dart';
 import '../../domain/auth/value_objects.dart';
 
 class AuthFirebaseFacade implements AuthFacadeInterface {
@@ -21,19 +22,32 @@ class AuthFirebaseFacade implements AuthFacadeInterface {
   Future<Either<AuthFailure, Unit>> registerWithEmailAndPassword({
     @required EmailAddress emailAddress,
     @required Password password,
+    @required Username username,
   }) async {
     final emailAddressStr = emailAddress.getOrCrash();
     final passwordStr = password.getOrCrash();
+    final usernameStr = username.getOrCrash();
+    final userUpdateInfo = UserUpdateInfo();
+    userUpdateInfo.displayName = usernameStr;
     try {
       return await firebaseAuth
           .createUserWithEmailAndPassword(
-            email: emailAddressStr,
-            password: passwordStr,
-          )
-          .then((v) => right(unit));
+        email: emailAddressStr,
+        password: passwordStr,
+      )
+          .then(
+        (authResult) {
+          final registeredUser = authResult.user;
+          registeredUser.updateProfile(userUpdateInfo);
+          return right(unit);
+        },
+      );
     } on PlatformException catch (e) {
       if (e.code == "ERROR_EMAIL_ALREADY_IN_USE") {
         return left(const AuthFailure.emailAlreadyInUse());
+      } else if (e.code == "ERROR_USER_DISABLED" ||
+          e.code == "ERROR_USER_NOT_FOUND") {
+        return left(const AuthFailure.errorWhenRegisteringUsername());
       }
       return left(const AuthFailure.serverError());
     }
@@ -82,5 +96,26 @@ class AuthFirebaseFacade implements AuthFacadeInterface {
     } on PlatformException catch (_) {
       return left(const AuthFailure.serverError());
     }
+  }
+
+  @override
+  Future<Option<User>> getCurrentSignedUser() async {
+    final firebaseUser = await firebaseAuth.currentUser();
+    User currentUser;
+    if (firebaseUser != null) {
+      currentUser = User(
+        uid: firebaseUser.uid,
+        displayName: Username(firebaseUser.displayName ?? "without username"),
+      );
+    }
+    return optionOf(currentUser);
+  }
+
+  @override
+  Future<void> signOut() async {
+    Future.wait([
+      firebaseAuth.signOut(),
+      googleSignIn.signOut(),
+    ]);
   }
 }

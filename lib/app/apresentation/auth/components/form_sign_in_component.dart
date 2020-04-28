@@ -10,7 +10,11 @@ import '../widgets/text_with_action_widget.dart';
 class FormSignInComponent extends StatelessWidget {
   final SignInFormBloc bloc;
 
-  const FormSignInComponent({Key key, @required this.bloc}) : super(key: key);
+  const FormSignInComponent({
+    Key key,
+    @required this.bloc,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SignInFormBloc, SignInFormState>(
@@ -21,7 +25,7 @@ class FormSignInComponent extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              ..._buildTextFieldsAndFormButtons(),
+              ..._listOfTextFieldsAndFormButtons(),
               const SizedBox(height: 16),
               _buildSociaNewtorkButtons(),
               const SizedBox(height: 16),
@@ -52,14 +56,14 @@ class FormSignInComponent extends StatelessWidget {
     );
   }
 
-  List<Widget> _buildTextFieldsAndFormButtons() {
+  List<Widget> _listOfTextFieldsAndFormButtons() {
     return [
       CustomTextFieldWidget(
         hintText: "Email Address",
         prefixIcon: Icons.email,
         onChanged: (value) {
           bloc.add(
-            EmailChanged(value),
+            SignInFormEvent.emailChanged(value),
           );
         },
         validator: (_) => bloc.state.emailAddress.value.fold(
@@ -107,7 +111,7 @@ class FormSignInComponent extends StatelessWidget {
             password: bloc.state.password,
           ),
         ),
-      )
+      ),
     ];
   }
 }

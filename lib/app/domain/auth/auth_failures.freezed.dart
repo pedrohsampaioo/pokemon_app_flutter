@@ -27,6 +27,10 @@ class _$AuthFailureTearOff {
   EmailAlreadyInUse emailAlreadyInUse() {
     return const EmailAlreadyInUse();
   }
+
+  ErrorWhenRegisteringUsername errorWhenRegisteringUsername() {
+    return const ErrorWhenRegisteringUsername();
+  }
 }
 
 // ignore: unused_element
@@ -39,6 +43,7 @@ mixin _$AuthFailure {
     @required Result serverError(),
     @required Result invalidEmailAndPasswordCombination(),
     @required Result emailAlreadyInUse(),
+    @required Result errorWhenRegisteringUsername(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -46,6 +51,7 @@ mixin _$AuthFailure {
     Result serverError(),
     Result invalidEmailAndPasswordCombination(),
     Result emailAlreadyInUse(),
+    Result errorWhenRegisteringUsername(),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -56,6 +62,8 @@ mixin _$AuthFailure {
         Result invalidEmailAndPasswordCombination(
             InvalidEmailAndPasswordCombination value),
     @required Result emailAlreadyInUse(EmailAlreadyInUse value),
+    @required
+        Result errorWhenRegisteringUsername(ErrorWhenRegisteringUsername value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -64,6 +72,7 @@ mixin _$AuthFailure {
     Result invalidEmailAndPasswordCombination(
         InvalidEmailAndPasswordCombination value),
     Result emailAlreadyInUse(EmailAlreadyInUse value),
+    Result errorWhenRegisteringUsername(ErrorWhenRegisteringUsername value),
     @required Result orElse(),
   });
 }
@@ -122,11 +131,13 @@ class _$CancelledByUser implements CancelledByUser {
     @required Result serverError(),
     @required Result invalidEmailAndPasswordCombination(),
     @required Result emailAlreadyInUse(),
+    @required Result errorWhenRegisteringUsername(),
   }) {
     assert(cancelledByUser != null);
     assert(serverError != null);
     assert(invalidEmailAndPasswordCombination != null);
     assert(emailAlreadyInUse != null);
+    assert(errorWhenRegisteringUsername != null);
     return cancelledByUser();
   }
 
@@ -137,6 +148,7 @@ class _$CancelledByUser implements CancelledByUser {
     Result serverError(),
     Result invalidEmailAndPasswordCombination(),
     Result emailAlreadyInUse(),
+    Result errorWhenRegisteringUsername(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -155,11 +167,14 @@ class _$CancelledByUser implements CancelledByUser {
         Result invalidEmailAndPasswordCombination(
             InvalidEmailAndPasswordCombination value),
     @required Result emailAlreadyInUse(EmailAlreadyInUse value),
+    @required
+        Result errorWhenRegisteringUsername(ErrorWhenRegisteringUsername value),
   }) {
     assert(cancelledByUser != null);
     assert(serverError != null);
     assert(invalidEmailAndPasswordCombination != null);
     assert(emailAlreadyInUse != null);
+    assert(errorWhenRegisteringUsername != null);
     return cancelledByUser(this);
   }
 
@@ -171,6 +186,7 @@ class _$CancelledByUser implements CancelledByUser {
     Result invalidEmailAndPasswordCombination(
         InvalidEmailAndPasswordCombination value),
     Result emailAlreadyInUse(EmailAlreadyInUse value),
+    Result errorWhenRegisteringUsername(ErrorWhenRegisteringUsername value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -224,11 +240,13 @@ class _$ServerError implements ServerError {
     @required Result serverError(),
     @required Result invalidEmailAndPasswordCombination(),
     @required Result emailAlreadyInUse(),
+    @required Result errorWhenRegisteringUsername(),
   }) {
     assert(cancelledByUser != null);
     assert(serverError != null);
     assert(invalidEmailAndPasswordCombination != null);
     assert(emailAlreadyInUse != null);
+    assert(errorWhenRegisteringUsername != null);
     return serverError();
   }
 
@@ -239,6 +257,7 @@ class _$ServerError implements ServerError {
     Result serverError(),
     Result invalidEmailAndPasswordCombination(),
     Result emailAlreadyInUse(),
+    Result errorWhenRegisteringUsername(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -257,11 +276,14 @@ class _$ServerError implements ServerError {
         Result invalidEmailAndPasswordCombination(
             InvalidEmailAndPasswordCombination value),
     @required Result emailAlreadyInUse(EmailAlreadyInUse value),
+    @required
+        Result errorWhenRegisteringUsername(ErrorWhenRegisteringUsername value),
   }) {
     assert(cancelledByUser != null);
     assert(serverError != null);
     assert(invalidEmailAndPasswordCombination != null);
     assert(emailAlreadyInUse != null);
+    assert(errorWhenRegisteringUsername != null);
     return serverError(this);
   }
 
@@ -273,6 +295,7 @@ class _$ServerError implements ServerError {
     Result invalidEmailAndPasswordCombination(
         InvalidEmailAndPasswordCombination value),
     Result emailAlreadyInUse(EmailAlreadyInUse value),
+    Result errorWhenRegisteringUsername(ErrorWhenRegisteringUsername value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -332,11 +355,13 @@ class _$InvalidEmailAndPasswordCombination
     @required Result serverError(),
     @required Result invalidEmailAndPasswordCombination(),
     @required Result emailAlreadyInUse(),
+    @required Result errorWhenRegisteringUsername(),
   }) {
     assert(cancelledByUser != null);
     assert(serverError != null);
     assert(invalidEmailAndPasswordCombination != null);
     assert(emailAlreadyInUse != null);
+    assert(errorWhenRegisteringUsername != null);
     return invalidEmailAndPasswordCombination();
   }
 
@@ -347,6 +372,7 @@ class _$InvalidEmailAndPasswordCombination
     Result serverError(),
     Result invalidEmailAndPasswordCombination(),
     Result emailAlreadyInUse(),
+    Result errorWhenRegisteringUsername(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -365,11 +391,14 @@ class _$InvalidEmailAndPasswordCombination
         Result invalidEmailAndPasswordCombination(
             InvalidEmailAndPasswordCombination value),
     @required Result emailAlreadyInUse(EmailAlreadyInUse value),
+    @required
+        Result errorWhenRegisteringUsername(ErrorWhenRegisteringUsername value),
   }) {
     assert(cancelledByUser != null);
     assert(serverError != null);
     assert(invalidEmailAndPasswordCombination != null);
     assert(emailAlreadyInUse != null);
+    assert(errorWhenRegisteringUsername != null);
     return invalidEmailAndPasswordCombination(this);
   }
 
@@ -381,6 +410,7 @@ class _$InvalidEmailAndPasswordCombination
     Result invalidEmailAndPasswordCombination(
         InvalidEmailAndPasswordCombination value),
     Result emailAlreadyInUse(EmailAlreadyInUse value),
+    Result errorWhenRegisteringUsername(ErrorWhenRegisteringUsername value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -436,11 +466,13 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
     @required Result serverError(),
     @required Result invalidEmailAndPasswordCombination(),
     @required Result emailAlreadyInUse(),
+    @required Result errorWhenRegisteringUsername(),
   }) {
     assert(cancelledByUser != null);
     assert(serverError != null);
     assert(invalidEmailAndPasswordCombination != null);
     assert(emailAlreadyInUse != null);
+    assert(errorWhenRegisteringUsername != null);
     return emailAlreadyInUse();
   }
 
@@ -451,6 +483,7 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
     Result serverError(),
     Result invalidEmailAndPasswordCombination(),
     Result emailAlreadyInUse(),
+    Result errorWhenRegisteringUsername(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -469,11 +502,14 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
         Result invalidEmailAndPasswordCombination(
             InvalidEmailAndPasswordCombination value),
     @required Result emailAlreadyInUse(EmailAlreadyInUse value),
+    @required
+        Result errorWhenRegisteringUsername(ErrorWhenRegisteringUsername value),
   }) {
     assert(cancelledByUser != null);
     assert(serverError != null);
     assert(invalidEmailAndPasswordCombination != null);
     assert(emailAlreadyInUse != null);
+    assert(errorWhenRegisteringUsername != null);
     return emailAlreadyInUse(this);
   }
 
@@ -485,6 +521,7 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
     Result invalidEmailAndPasswordCombination(
         InvalidEmailAndPasswordCombination value),
     Result emailAlreadyInUse(EmailAlreadyInUse value),
+    Result errorWhenRegisteringUsername(ErrorWhenRegisteringUsername value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -497,4 +534,117 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
 
 abstract class EmailAlreadyInUse implements AuthFailure {
   const factory EmailAlreadyInUse() = _$EmailAlreadyInUse;
+}
+
+abstract class $ErrorWhenRegisteringUsernameCopyWith<$Res> {
+  factory $ErrorWhenRegisteringUsernameCopyWith(
+          ErrorWhenRegisteringUsername value,
+          $Res Function(ErrorWhenRegisteringUsername) then) =
+      _$ErrorWhenRegisteringUsernameCopyWithImpl<$Res>;
+}
+
+class _$ErrorWhenRegisteringUsernameCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res>
+    implements $ErrorWhenRegisteringUsernameCopyWith<$Res> {
+  _$ErrorWhenRegisteringUsernameCopyWithImpl(
+      ErrorWhenRegisteringUsername _value,
+      $Res Function(ErrorWhenRegisteringUsername) _then)
+      : super(_value, (v) => _then(v as ErrorWhenRegisteringUsername));
+
+  @override
+  ErrorWhenRegisteringUsername get _value =>
+      super._value as ErrorWhenRegisteringUsername;
+}
+
+class _$ErrorWhenRegisteringUsername implements ErrorWhenRegisteringUsername {
+  const _$ErrorWhenRegisteringUsername();
+
+  @override
+  String toString() {
+    return 'AuthFailure.errorWhenRegisteringUsername()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is ErrorWhenRegisteringUsername);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result cancelledByUser(),
+    @required Result serverError(),
+    @required Result invalidEmailAndPasswordCombination(),
+    @required Result emailAlreadyInUse(),
+    @required Result errorWhenRegisteringUsername(),
+  }) {
+    assert(cancelledByUser != null);
+    assert(serverError != null);
+    assert(invalidEmailAndPasswordCombination != null);
+    assert(emailAlreadyInUse != null);
+    assert(errorWhenRegisteringUsername != null);
+    return errorWhenRegisteringUsername();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result cancelledByUser(),
+    Result serverError(),
+    Result invalidEmailAndPasswordCombination(),
+    Result emailAlreadyInUse(),
+    Result errorWhenRegisteringUsername(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (errorWhenRegisteringUsername != null) {
+      return errorWhenRegisteringUsername();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result cancelledByUser(CancelledByUser value),
+    @required Result serverError(ServerError value),
+    @required
+        Result invalidEmailAndPasswordCombination(
+            InvalidEmailAndPasswordCombination value),
+    @required Result emailAlreadyInUse(EmailAlreadyInUse value),
+    @required
+        Result errorWhenRegisteringUsername(ErrorWhenRegisteringUsername value),
+  }) {
+    assert(cancelledByUser != null);
+    assert(serverError != null);
+    assert(invalidEmailAndPasswordCombination != null);
+    assert(emailAlreadyInUse != null);
+    assert(errorWhenRegisteringUsername != null);
+    return errorWhenRegisteringUsername(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result cancelledByUser(CancelledByUser value),
+    Result serverError(ServerError value),
+    Result invalidEmailAndPasswordCombination(
+        InvalidEmailAndPasswordCombination value),
+    Result emailAlreadyInUse(EmailAlreadyInUse value),
+    Result errorWhenRegisteringUsername(ErrorWhenRegisteringUsername value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (errorWhenRegisteringUsername != null) {
+      return errorWhenRegisteringUsername(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ErrorWhenRegisteringUsername implements AuthFailure {
+  const factory ErrorWhenRegisteringUsername() = _$ErrorWhenRegisteringUsername;
 }

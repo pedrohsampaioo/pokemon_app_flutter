@@ -32,14 +32,6 @@ class _$SignInFormEventTearOff {
     );
   }
 
-  RegisterWithEmailAndPassword registerInWithEmailAndPassword(
-      {@required EmailAddress emailAddress, @required Password password}) {
-    return RegisterWithEmailAndPassword(
-      emailAddress: emailAddress,
-      password: password,
-    );
-  }
-
   SignInWithGoogle signInWithGoogle() {
     return const SignInWithGoogle();
   }
@@ -56,9 +48,6 @@ mixin _$SignInFormEvent {
     @required
         Result signInWithEmailAndPassword(
             EmailAddress emailAddress, Password password),
-    @required
-        Result registerInWithEmailAndPassword(
-            EmailAddress emailAddress, Password password),
     @required Result signInWithGoogle(),
   });
   @optionalTypeArgs
@@ -66,8 +55,6 @@ mixin _$SignInFormEvent {
     Result emailChanged(String emailAddressStr),
     Result passwordChanged(String passwordStr),
     Result signInWithEmailAndPassword(
-        EmailAddress emailAddress, Password password),
-    Result registerInWithEmailAndPassword(
         EmailAddress emailAddress, Password password),
     Result signInWithGoogle(),
     @required Result orElse(),
@@ -78,9 +65,6 @@ mixin _$SignInFormEvent {
     @required Result passwordChanged(PasswordChanged value),
     @required
         Result signInWithEmailAndPassword(SignInWithEmailAndPassword value),
-    @required
-        Result registerInWithEmailAndPassword(
-            RegisterWithEmailAndPassword value),
     @required Result signInWithGoogle(SignInWithGoogle value),
   });
   @optionalTypeArgs
@@ -88,7 +72,6 @@ mixin _$SignInFormEvent {
     Result emailChanged(EmailChanged value),
     Result passwordChanged(PasswordChanged value),
     Result signInWithEmailAndPassword(SignInWithEmailAndPassword value),
-    Result registerInWithEmailAndPassword(RegisterWithEmailAndPassword value),
     Result signInWithGoogle(SignInWithGoogle value),
     @required Result orElse(),
   });
@@ -175,15 +158,11 @@ class _$EmailChanged implements EmailChanged {
     @required
         Result signInWithEmailAndPassword(
             EmailAddress emailAddress, Password password),
-    @required
-        Result registerInWithEmailAndPassword(
-            EmailAddress emailAddress, Password password),
     @required Result signInWithGoogle(),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
     assert(signInWithEmailAndPassword != null);
-    assert(registerInWithEmailAndPassword != null);
     assert(signInWithGoogle != null);
     return emailChanged(emailAddressStr);
   }
@@ -194,8 +173,6 @@ class _$EmailChanged implements EmailChanged {
     Result emailChanged(String emailAddressStr),
     Result passwordChanged(String passwordStr),
     Result signInWithEmailAndPassword(
-        EmailAddress emailAddress, Password password),
-    Result registerInWithEmailAndPassword(
         EmailAddress emailAddress, Password password),
     Result signInWithGoogle(),
     @required Result orElse(),
@@ -214,15 +191,11 @@ class _$EmailChanged implements EmailChanged {
     @required Result passwordChanged(PasswordChanged value),
     @required
         Result signInWithEmailAndPassword(SignInWithEmailAndPassword value),
-    @required
-        Result registerInWithEmailAndPassword(
-            RegisterWithEmailAndPassword value),
     @required Result signInWithGoogle(SignInWithGoogle value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
     assert(signInWithEmailAndPassword != null);
-    assert(registerInWithEmailAndPassword != null);
     assert(signInWithGoogle != null);
     return emailChanged(this);
   }
@@ -233,7 +206,6 @@ class _$EmailChanged implements EmailChanged {
     Result emailChanged(EmailChanged value),
     Result passwordChanged(PasswordChanged value),
     Result signInWithEmailAndPassword(SignInWithEmailAndPassword value),
-    Result registerInWithEmailAndPassword(RegisterWithEmailAndPassword value),
     Result signInWithGoogle(SignInWithGoogle value),
     @required Result orElse(),
   }) {
@@ -315,15 +287,11 @@ class _$PasswordChanged implements PasswordChanged {
     @required
         Result signInWithEmailAndPassword(
             EmailAddress emailAddress, Password password),
-    @required
-        Result registerInWithEmailAndPassword(
-            EmailAddress emailAddress, Password password),
     @required Result signInWithGoogle(),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
     assert(signInWithEmailAndPassword != null);
-    assert(registerInWithEmailAndPassword != null);
     assert(signInWithGoogle != null);
     return passwordChanged(passwordStr);
   }
@@ -334,8 +302,6 @@ class _$PasswordChanged implements PasswordChanged {
     Result emailChanged(String emailAddressStr),
     Result passwordChanged(String passwordStr),
     Result signInWithEmailAndPassword(
-        EmailAddress emailAddress, Password password),
-    Result registerInWithEmailAndPassword(
         EmailAddress emailAddress, Password password),
     Result signInWithGoogle(),
     @required Result orElse(),
@@ -354,15 +320,11 @@ class _$PasswordChanged implements PasswordChanged {
     @required Result passwordChanged(PasswordChanged value),
     @required
         Result signInWithEmailAndPassword(SignInWithEmailAndPassword value),
-    @required
-        Result registerInWithEmailAndPassword(
-            RegisterWithEmailAndPassword value),
     @required Result signInWithGoogle(SignInWithGoogle value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
     assert(signInWithEmailAndPassword != null);
-    assert(registerInWithEmailAndPassword != null);
     assert(signInWithGoogle != null);
     return passwordChanged(this);
   }
@@ -373,7 +335,6 @@ class _$PasswordChanged implements PasswordChanged {
     Result emailChanged(EmailChanged value),
     Result passwordChanged(PasswordChanged value),
     Result signInWithEmailAndPassword(SignInWithEmailAndPassword value),
-    Result registerInWithEmailAndPassword(RegisterWithEmailAndPassword value),
     Result signInWithGoogle(SignInWithGoogle value),
     @required Result orElse(),
   }) {
@@ -472,15 +433,11 @@ class _$SignInWithEmailAndPassword implements SignInWithEmailAndPassword {
     @required
         Result signInWithEmailAndPassword(
             EmailAddress emailAddress, Password password),
-    @required
-        Result registerInWithEmailAndPassword(
-            EmailAddress emailAddress, Password password),
     @required Result signInWithGoogle(),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
     assert(signInWithEmailAndPassword != null);
-    assert(registerInWithEmailAndPassword != null);
     assert(signInWithGoogle != null);
     return signInWithEmailAndPassword(emailAddress, password);
   }
@@ -491,8 +448,6 @@ class _$SignInWithEmailAndPassword implements SignInWithEmailAndPassword {
     Result emailChanged(String emailAddressStr),
     Result passwordChanged(String passwordStr),
     Result signInWithEmailAndPassword(
-        EmailAddress emailAddress, Password password),
-    Result registerInWithEmailAndPassword(
         EmailAddress emailAddress, Password password),
     Result signInWithGoogle(),
     @required Result orElse(),
@@ -511,15 +466,11 @@ class _$SignInWithEmailAndPassword implements SignInWithEmailAndPassword {
     @required Result passwordChanged(PasswordChanged value),
     @required
         Result signInWithEmailAndPassword(SignInWithEmailAndPassword value),
-    @required
-        Result registerInWithEmailAndPassword(
-            RegisterWithEmailAndPassword value),
     @required Result signInWithGoogle(SignInWithGoogle value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
     assert(signInWithEmailAndPassword != null);
-    assert(registerInWithEmailAndPassword != null);
     assert(signInWithGoogle != null);
     return signInWithEmailAndPassword(this);
   }
@@ -530,7 +481,6 @@ class _$SignInWithEmailAndPassword implements SignInWithEmailAndPassword {
     Result emailChanged(EmailChanged value),
     Result passwordChanged(PasswordChanged value),
     Result signInWithEmailAndPassword(SignInWithEmailAndPassword value),
-    Result registerInWithEmailAndPassword(RegisterWithEmailAndPassword value),
     Result signInWithGoogle(SignInWithGoogle value),
     @required Result orElse(),
   }) {
@@ -550,168 +500,6 @@ abstract class SignInWithEmailAndPassword implements SignInFormEvent {
   EmailAddress get emailAddress;
   Password get password;
   $SignInWithEmailAndPasswordCopyWith<SignInWithEmailAndPassword> get copyWith;
-}
-
-abstract class $RegisterWithEmailAndPasswordCopyWith<$Res> {
-  factory $RegisterWithEmailAndPasswordCopyWith(
-          RegisterWithEmailAndPassword value,
-          $Res Function(RegisterWithEmailAndPassword) then) =
-      _$RegisterWithEmailAndPasswordCopyWithImpl<$Res>;
-  $Res call({EmailAddress emailAddress, Password password});
-}
-
-class _$RegisterWithEmailAndPasswordCopyWithImpl<$Res>
-    extends _$SignInFormEventCopyWithImpl<$Res>
-    implements $RegisterWithEmailAndPasswordCopyWith<$Res> {
-  _$RegisterWithEmailAndPasswordCopyWithImpl(
-      RegisterWithEmailAndPassword _value,
-      $Res Function(RegisterWithEmailAndPassword) _then)
-      : super(_value, (v) => _then(v as RegisterWithEmailAndPassword));
-
-  @override
-  RegisterWithEmailAndPassword get _value =>
-      super._value as RegisterWithEmailAndPassword;
-
-  @override
-  $Res call({
-    Object emailAddress = freezed,
-    Object password = freezed,
-  }) {
-    return _then(RegisterWithEmailAndPassword(
-      emailAddress: emailAddress == freezed
-          ? _value.emailAddress
-          : emailAddress as EmailAddress,
-      password: password == freezed ? _value.password : password as Password,
-    ));
-  }
-}
-
-class _$RegisterWithEmailAndPassword implements RegisterWithEmailAndPassword {
-  const _$RegisterWithEmailAndPassword(
-      {@required this.emailAddress, @required this.password})
-      : assert(emailAddress != null),
-        assert(password != null);
-
-  @override
-  final EmailAddress emailAddress;
-  @override
-  final Password password;
-
-  @override
-  String toString() {
-    return 'SignInFormEvent.registerInWithEmailAndPassword(emailAddress: $emailAddress, password: $password)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is RegisterWithEmailAndPassword &&
-            (identical(other.emailAddress, emailAddress) ||
-                const DeepCollectionEquality()
-                    .equals(other.emailAddress, emailAddress)) &&
-            (identical(other.password, password) ||
-                const DeepCollectionEquality()
-                    .equals(other.password, password)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(emailAddress) ^
-      const DeepCollectionEquality().hash(password);
-
-  @override
-  $RegisterWithEmailAndPasswordCopyWith<RegisterWithEmailAndPassword>
-      get copyWith => _$RegisterWithEmailAndPasswordCopyWithImpl<
-          RegisterWithEmailAndPassword>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result emailChanged(String emailAddressStr),
-    @required Result passwordChanged(String passwordStr),
-    @required
-        Result signInWithEmailAndPassword(
-            EmailAddress emailAddress, Password password),
-    @required
-        Result registerInWithEmailAndPassword(
-            EmailAddress emailAddress, Password password),
-    @required Result signInWithGoogle(),
-  }) {
-    assert(emailChanged != null);
-    assert(passwordChanged != null);
-    assert(signInWithEmailAndPassword != null);
-    assert(registerInWithEmailAndPassword != null);
-    assert(signInWithGoogle != null);
-    return registerInWithEmailAndPassword(emailAddress, password);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result emailChanged(String emailAddressStr),
-    Result passwordChanged(String passwordStr),
-    Result signInWithEmailAndPassword(
-        EmailAddress emailAddress, Password password),
-    Result registerInWithEmailAndPassword(
-        EmailAddress emailAddress, Password password),
-    Result signInWithGoogle(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (registerInWithEmailAndPassword != null) {
-      return registerInWithEmailAndPassword(emailAddress, password);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result emailChanged(EmailChanged value),
-    @required Result passwordChanged(PasswordChanged value),
-    @required
-        Result signInWithEmailAndPassword(SignInWithEmailAndPassword value),
-    @required
-        Result registerInWithEmailAndPassword(
-            RegisterWithEmailAndPassword value),
-    @required Result signInWithGoogle(SignInWithGoogle value),
-  }) {
-    assert(emailChanged != null);
-    assert(passwordChanged != null);
-    assert(signInWithEmailAndPassword != null);
-    assert(registerInWithEmailAndPassword != null);
-    assert(signInWithGoogle != null);
-    return registerInWithEmailAndPassword(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result emailChanged(EmailChanged value),
-    Result passwordChanged(PasswordChanged value),
-    Result signInWithEmailAndPassword(SignInWithEmailAndPassword value),
-    Result registerInWithEmailAndPassword(RegisterWithEmailAndPassword value),
-    Result signInWithGoogle(SignInWithGoogle value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (registerInWithEmailAndPassword != null) {
-      return registerInWithEmailAndPassword(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class RegisterWithEmailAndPassword implements SignInFormEvent {
-  const factory RegisterWithEmailAndPassword(
-      {@required EmailAddress emailAddress,
-      @required Password password}) = _$RegisterWithEmailAndPassword;
-
-  EmailAddress get emailAddress;
-  Password get password;
-  $RegisterWithEmailAndPasswordCopyWith<RegisterWithEmailAndPassword>
-      get copyWith;
 }
 
 abstract class $SignInWithGoogleCopyWith<$Res> {
@@ -755,15 +543,11 @@ class _$SignInWithGoogle implements SignInWithGoogle {
     @required
         Result signInWithEmailAndPassword(
             EmailAddress emailAddress, Password password),
-    @required
-        Result registerInWithEmailAndPassword(
-            EmailAddress emailAddress, Password password),
     @required Result signInWithGoogle(),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
     assert(signInWithEmailAndPassword != null);
-    assert(registerInWithEmailAndPassword != null);
     assert(signInWithGoogle != null);
     return signInWithGoogle();
   }
@@ -774,8 +558,6 @@ class _$SignInWithGoogle implements SignInWithGoogle {
     Result emailChanged(String emailAddressStr),
     Result passwordChanged(String passwordStr),
     Result signInWithEmailAndPassword(
-        EmailAddress emailAddress, Password password),
-    Result registerInWithEmailAndPassword(
         EmailAddress emailAddress, Password password),
     Result signInWithGoogle(),
     @required Result orElse(),
@@ -794,15 +576,11 @@ class _$SignInWithGoogle implements SignInWithGoogle {
     @required Result passwordChanged(PasswordChanged value),
     @required
         Result signInWithEmailAndPassword(SignInWithEmailAndPassword value),
-    @required
-        Result registerInWithEmailAndPassword(
-            RegisterWithEmailAndPassword value),
     @required Result signInWithGoogle(SignInWithGoogle value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
     assert(signInWithEmailAndPassword != null);
-    assert(registerInWithEmailAndPassword != null);
     assert(signInWithGoogle != null);
     return signInWithGoogle(this);
   }
@@ -813,7 +591,6 @@ class _$SignInWithGoogle implements SignInWithGoogle {
     Result emailChanged(EmailChanged value),
     Result passwordChanged(PasswordChanged value),
     Result signInWithEmailAndPassword(SignInWithEmailAndPassword value),
-    Result registerInWithEmailAndPassword(RegisterWithEmailAndPassword value),
     Result signInWithGoogle(SignInWithGoogle value),
     @required Result orElse(),
   }) {

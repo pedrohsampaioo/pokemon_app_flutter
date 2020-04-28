@@ -29,3 +29,16 @@ class Password extends ValueObject<String> {
     );
   }
 }
+
+class Username extends ValueObject<String> {
+  final Either<ValueFailure<String>, String> value;
+
+  const Username._(this.value);
+
+  factory Username(String input) {
+    assert(input != null);
+    return Username._(
+      validateUsername(input),
+    );
+  }
+}

@@ -21,3 +21,12 @@ Either<ValueFailure<String>, String> validatePassword(String input) {
     ValueFailure.shortPassword(failedValue: input),
   );
 }
+
+Either<ValueFailure<String>, String> validateUsername(String input) {
+  if (input.isNotEmpty) {
+    return right(input);
+  }
+  return left(
+    ValueFailure.invalidUsername(),
+  );
+}

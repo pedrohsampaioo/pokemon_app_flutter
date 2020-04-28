@@ -24,45 +24,48 @@ class _$ValueFailureTearOff {
       failedValue: failedValue,
     );
   }
+
+  InvalidUsername<T> invalidUsername<T>() {
+    return InvalidUsername<T>();
+  }
 }
 
 // ignore: unused_element
 const $ValueFailure = _$ValueFailureTearOff();
 
 mixin _$ValueFailure<T> {
-  String get failedValue;
-
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result invalidEmailAddress(String failedValue),
     @required Result shortPassword(String failedValue),
+    @required Result invalidUsername(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result invalidEmailAddress(String failedValue),
     Result shortPassword(String failedValue),
+    Result invalidUsername(),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result invalidEmailAddress(InvalidEmailAddress<T> value),
     @required Result shortPassword(ShortPassword<T> value),
+    @required Result invalidUsername(InvalidUsername<T> value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result invalidEmailAddress(InvalidEmailAddress<T> value),
     Result shortPassword(ShortPassword<T> value),
+    Result invalidUsername(InvalidUsername<T> value),
     @required Result orElse(),
   });
-
-  $ValueFailureCopyWith<T, ValueFailure<T>> get copyWith;
 }
 
 abstract class $ValueFailureCopyWith<T, $Res> {
   factory $ValueFailureCopyWith(
           ValueFailure<T> value, $Res Function(ValueFailure<T>) then) =
       _$ValueFailureCopyWithImpl<T, $Res>;
-  $Res call({String failedValue});
 }
 
 class _$ValueFailureCopyWithImpl<T, $Res>
@@ -72,24 +75,12 @@ class _$ValueFailureCopyWithImpl<T, $Res>
   final ValueFailure<T> _value;
   // ignore: unused_field
   final $Res Function(ValueFailure<T>) _then;
-
-  @override
-  $Res call({
-    Object failedValue = freezed,
-  }) {
-    return _then(_value.copyWith(
-      failedValue:
-          failedValue == freezed ? _value.failedValue : failedValue as String,
-    ));
-  }
 }
 
-abstract class $InvalidEmailAddressCopyWith<T, $Res>
-    implements $ValueFailureCopyWith<T, $Res> {
+abstract class $InvalidEmailAddressCopyWith<T, $Res> {
   factory $InvalidEmailAddressCopyWith(InvalidEmailAddress<T> value,
           $Res Function(InvalidEmailAddress<T>) then) =
       _$InvalidEmailAddressCopyWithImpl<T, $Res>;
-  @override
   $Res call({String failedValue});
 }
 
@@ -149,9 +140,11 @@ class _$InvalidEmailAddress<T> implements InvalidEmailAddress<T> {
   Result when<Result extends Object>({
     @required Result invalidEmailAddress(String failedValue),
     @required Result shortPassword(String failedValue),
+    @required Result invalidUsername(),
   }) {
     assert(invalidEmailAddress != null);
     assert(shortPassword != null);
+    assert(invalidUsername != null);
     return invalidEmailAddress(failedValue);
   }
 
@@ -160,6 +153,7 @@ class _$InvalidEmailAddress<T> implements InvalidEmailAddress<T> {
   Result maybeWhen<Result extends Object>({
     Result invalidEmailAddress(String failedValue),
     Result shortPassword(String failedValue),
+    Result invalidUsername(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -174,9 +168,11 @@ class _$InvalidEmailAddress<T> implements InvalidEmailAddress<T> {
   Result map<Result extends Object>({
     @required Result invalidEmailAddress(InvalidEmailAddress<T> value),
     @required Result shortPassword(ShortPassword<T> value),
+    @required Result invalidUsername(InvalidUsername<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(shortPassword != null);
+    assert(invalidUsername != null);
     return invalidEmailAddress(this);
   }
 
@@ -185,6 +181,7 @@ class _$InvalidEmailAddress<T> implements InvalidEmailAddress<T> {
   Result maybeMap<Result extends Object>({
     Result invalidEmailAddress(InvalidEmailAddress<T> value),
     Result shortPassword(ShortPassword<T> value),
+    Result invalidUsername(InvalidUsername<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -199,18 +196,14 @@ abstract class InvalidEmailAddress<T> implements ValueFailure<T> {
   const factory InvalidEmailAddress({@required String failedValue}) =
       _$InvalidEmailAddress<T>;
 
-  @override
   String get failedValue;
-  @override
   $InvalidEmailAddressCopyWith<T, InvalidEmailAddress<T>> get copyWith;
 }
 
-abstract class $ShortPasswordCopyWith<T, $Res>
-    implements $ValueFailureCopyWith<T, $Res> {
+abstract class $ShortPasswordCopyWith<T, $Res> {
   factory $ShortPasswordCopyWith(
           ShortPassword<T> value, $Res Function(ShortPassword<T>) then) =
       _$ShortPasswordCopyWithImpl<T, $Res>;
-  @override
   $Res call({String failedValue});
 }
 
@@ -269,9 +262,11 @@ class _$ShortPassword<T> implements ShortPassword<T> {
   Result when<Result extends Object>({
     @required Result invalidEmailAddress(String failedValue),
     @required Result shortPassword(String failedValue),
+    @required Result invalidUsername(),
   }) {
     assert(invalidEmailAddress != null);
     assert(shortPassword != null);
+    assert(invalidUsername != null);
     return shortPassword(failedValue);
   }
 
@@ -280,6 +275,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
   Result maybeWhen<Result extends Object>({
     Result invalidEmailAddress(String failedValue),
     Result shortPassword(String failedValue),
+    Result invalidUsername(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -294,9 +290,11 @@ class _$ShortPassword<T> implements ShortPassword<T> {
   Result map<Result extends Object>({
     @required Result invalidEmailAddress(InvalidEmailAddress<T> value),
     @required Result shortPassword(ShortPassword<T> value),
+    @required Result invalidUsername(InvalidUsername<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(shortPassword != null);
+    assert(invalidUsername != null);
     return shortPassword(this);
   }
 
@@ -305,6 +303,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
   Result maybeMap<Result extends Object>({
     Result invalidEmailAddress(InvalidEmailAddress<T> value),
     Result shortPassword(ShortPassword<T> value),
+    Result invalidUsername(InvalidUsername<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -319,8 +318,100 @@ abstract class ShortPassword<T> implements ValueFailure<T> {
   const factory ShortPassword({@required String failedValue}) =
       _$ShortPassword<T>;
 
-  @override
   String get failedValue;
-  @override
   $ShortPasswordCopyWith<T, ShortPassword<T>> get copyWith;
+}
+
+abstract class $InvalidUsernameCopyWith<T, $Res> {
+  factory $InvalidUsernameCopyWith(
+          InvalidUsername<T> value, $Res Function(InvalidUsername<T>) then) =
+      _$InvalidUsernameCopyWithImpl<T, $Res>;
+}
+
+class _$InvalidUsernameCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $InvalidUsernameCopyWith<T, $Res> {
+  _$InvalidUsernameCopyWithImpl(
+      InvalidUsername<T> _value, $Res Function(InvalidUsername<T>) _then)
+      : super(_value, (v) => _then(v as InvalidUsername<T>));
+
+  @override
+  InvalidUsername<T> get _value => super._value as InvalidUsername<T>;
+}
+
+class _$InvalidUsername<T> implements InvalidUsername<T> {
+  const _$InvalidUsername();
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.invalidUsername()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is InvalidUsername<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result invalidEmailAddress(String failedValue),
+    @required Result shortPassword(String failedValue),
+    @required Result invalidUsername(),
+  }) {
+    assert(invalidEmailAddress != null);
+    assert(shortPassword != null);
+    assert(invalidUsername != null);
+    return invalidUsername();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result invalidEmailAddress(String failedValue),
+    Result shortPassword(String failedValue),
+    Result invalidUsername(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidUsername != null) {
+      return invalidUsername();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result invalidEmailAddress(InvalidEmailAddress<T> value),
+    @required Result shortPassword(ShortPassword<T> value),
+    @required Result invalidUsername(InvalidUsername<T> value),
+  }) {
+    assert(invalidEmailAddress != null);
+    assert(shortPassword != null);
+    assert(invalidUsername != null);
+    return invalidUsername(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result invalidEmailAddress(InvalidEmailAddress<T> value),
+    Result shortPassword(ShortPassword<T> value),
+    Result invalidUsername(InvalidUsername<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidUsername != null) {
+      return invalidUsername(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidUsername<T> implements ValueFailure<T> {
+  const factory InvalidUsername() = _$InvalidUsername<T>;
 }
