@@ -14,10 +14,16 @@ description: A new Flutter project.
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.2.2 <3.0.0"
 
 dependencies:
-  flutter_modular: ^0.5.5
+  google_fonts: ^1.0.0
+  dartz: ^0.9.0
+  firebase_core: ^0.4.4+3
+  google_sign_in: ^4.4.4
+  firebase_auth: ^0.16.0
+  flutter_modular: ^1.1.2
+  flutter_bloc: ^4.0.0
   flutter:
     sdk: flutter
 
@@ -26,32 +32,33 @@ dependencies:
   cupertino_icons: ^0.1.2
 
 dev_dependencies:
+  build_runner: ^1.8.1
+  freezed: ^0.10.6
   flutter_test:
     sdk: flutter
-
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-
+  assets:
+    - assets/images/pokemon_logo.png
+    - assets/images/google_logo.png
+    - assets/images/facebook_logo.png
+    - assets/images/wrapper.gif
   # To add assets to your application, add an assets section, like this:
   # assets:
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
-
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
-
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
-
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a

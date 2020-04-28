@@ -1,5 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:pokemon_app/app/presentation/home/pages/home_page.dart';
+
+import 'pages/home_page.dart';
 
 class HomeModule extends ChildModule {
   @override
@@ -7,6 +8,6 @@ class HomeModule extends ChildModule {
 
   @override
   List<Router> get routers => [
-        Router(Modular.initialRoute, child: (_, args) => HomePage()),
+        Router("/home_page", child: (context, args) => HomePage()),
       ];
 }
