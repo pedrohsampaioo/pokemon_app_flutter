@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pokemon_app/app/modules/home/widgets/custom_app_bar_widget.dart';
-import 'package:pokemon_app/app/modules/home/widgets/filter_widget.dart';
-import 'package:pokemon_app/app/modules/home/widgets/pokemon_grid_widget.dart';
-import 'package:pokemon_app/app/modules/home/widgets/sort_widget.dart';
+import 'package:pokemon_app/app/presentation/home/widgets/custom_app_bar_widget.dart';
+import 'package:pokemon_app/app/presentation/home/widgets/filter_widget.dart';
+import 'package:pokemon_app/app/presentation/home/widgets/pokemon_grid_widget.dart';
+import 'package:pokemon_app/app/presentation/home/widgets/sort_widget.dart';
 
 class HomePage extends StatelessWidget {
   @override
