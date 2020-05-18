@@ -75,6 +75,7 @@ class RegisterPage extends StatelessWidget {
                 ),
               ),
               Column(
+                mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[

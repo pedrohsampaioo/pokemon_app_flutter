@@ -51,7 +51,7 @@ class SignInPage extends StatelessWidget {
                 (Route<dynamic> route) => false,
               ),
             );
-            return snackBarWithSucessMessage("Sign up completed");
+            return snackBarWithSucessMessage("Sign in completed");
           },
         );
       },
