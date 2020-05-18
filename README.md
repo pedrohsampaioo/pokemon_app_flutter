@@ -1,8 +1,10 @@
 # Pokemon App
 
-<img src="/readme/demo/pages.gif" width="200" height="400">
+<img src="/readme/demo/demo.gif" width="200" height="400">
 
 ## Screenshots
+
+<img src="/readme/screenshots/home.png" width="200" height="400" >    <img src="/readme/screenshots/sign_in.png" width="200" height="400" >    <img src="/readme/screenshots/sign_up.png" width="200" height="400">
 
 ## Why?
 
